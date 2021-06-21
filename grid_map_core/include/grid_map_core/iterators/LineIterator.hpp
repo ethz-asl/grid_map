@@ -71,6 +71,12 @@ public:
    */
   bool isPastEnd() const;
 
+  /*!
+   * Compute the line length within the current cell
+   * @return Length of line within the cell
+   */
+  double length() const;
+
 private:
 
 
@@ -124,6 +130,9 @@ private:
   double resolution_;
   Size bufferSize_;
   Index bufferStartIndex_;
+
+  Position pStart_; ///< Line origin
+  Position nInv_;   ///< Element-wise inverse of line direction
 
  public:
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
